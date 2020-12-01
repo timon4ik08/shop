@@ -4,7 +4,7 @@
 <head>
     <title>Spring Security Example </title>
 </head>
-<body>
+<body style="background-color: dimgrey">
 
 <form action="/login" method="post">
     <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
@@ -12,5 +12,6 @@
     <div><label> Password: <input type="password" name="password"/> </label></div>
     <div><input type="submit" value="Sign In"/></div>
 </form>
+<a href="/registration">New user</a>
 </body>
 </html>
