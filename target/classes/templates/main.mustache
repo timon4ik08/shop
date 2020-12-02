@@ -11,6 +11,7 @@
 </div>
 <div align="center">
     <form method="post" action="add">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
         <input type="text" name="text" placeholder="Введите имя:">
         <input type="text" name="tag" placeholder="Введите тэг:">
         <button type="submit" >Добавить</button>
@@ -20,12 +21,14 @@
     <p>
         <div>
             <form method="post" action="filter">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                 <input type="text" name="filter" placeholder="Найти:">
                 <input type="submit" value="Поиск">
             </form>
         </div>
         <div>
             <form method="post" action="filterId">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                 <input type="text" name="filterId" placeholder="Удалить №:">
                 <input type="submit" value="Удаление по ID">
             </form>
@@ -37,6 +40,7 @@
                     <td><b>{{id}}</b></td>
                     <td><span>{{text}}</span></td>
                     <td><i>{{tag}}</i></td>
+                    <td><strong>{{authorName}}</strong></td>
                 </tr>
         {{/messages}}
         </tbody>

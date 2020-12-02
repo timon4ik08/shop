@@ -53,7 +53,7 @@ public class MainController {
                          Map<String, Object> model){
         Iterable<Message> messages;
         if(filter != null && !filter.isEmpty())
-        messages = messageRepo.findByTag(filter);
+            messages = messageRepo.findAll();
         else
             messages = messageRepo.findAll();
         model.put("messages", messages);
