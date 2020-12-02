@@ -17,6 +17,31 @@
             <p><input type="submit"></p>
         </form>
     </div>
+
+    <div style="padding-top: 5px;">
+        {{#product}}
+            <table style="border: 2px solid goldenrod; min-width: 95%">
+                <tr style="margin: 0; padding: 0;">
+                    <td width="25%"><b>{{title}}</b></td>
+                    <td width="25%"><span>{{description}}</span></td>
+                    <td width="25%"><i>{{price}}</i></td>
+                    <td width="25%"><i>{{authorName}}</i></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <form method="get" action="/deleteProduct">
+                            <input type="hidden" name="attribute" value="{{id}}">
+                            <input type="submit" value="Удалить" style="color: darkred">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        {{/product}}
+
+
+
+    </div>
 </div>
 </body>
 </html>

@@ -46,6 +46,7 @@ public class MainController {
         Iterable<Message> messages = messageRepo.findAll();
         model.put("messages", messages);
         return "main";
+
     }
 
     @PostMapping("filter")

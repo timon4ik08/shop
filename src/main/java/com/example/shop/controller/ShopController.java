@@ -25,6 +25,8 @@ public class ShopController {
     @GetMapping("/shop")
     public String shopTest(@AuthenticationPrincipal User user, String param, Map<String, Object> model){
         model.put("name", user.getUsername());
+        Iterable<Product> productIterable = shopRepo.findAll();
+        model.put("product", productIterable);
         return "shop";
     }
 
@@ -37,7 +39,16 @@ public class ShopController {
         Product product = new Product(title, description, price, user);
         shopRepo.save(product);
         model.put("name", user.getUsername());
-        return "shop";
+        return "redirect:/shop";
     }
+
+    @GetMapping("/deleteProduct")
+    public String deleteProduct(Integer attribute){
+        shopRepo.deleteById(attribute);
+
+        return "redirect:/shop";
+    }
+
+
 
 }

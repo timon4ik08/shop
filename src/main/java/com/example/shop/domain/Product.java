@@ -25,6 +25,10 @@ public class Product {
     @JoinColumn(name = "user_id")
     private User author;
 
+    public String getAuthorName(){
+        return author.getUsername();
+    }
+
     public Integer getId() {
         return id;
     }
